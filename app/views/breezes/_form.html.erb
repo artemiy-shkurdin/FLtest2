@@ -1,0 +1,37 @@
+<%= form_for(@breeze) do |f| %>
+  <% if @breeze.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@breeze.errors.count, "error") %> prohibited this breeze from being saved:</h2>
+
+      <ul>
+      <% @breeze.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_field :content %>
+  </div>
+  <div class="field">
+    <%= f.label :cat_id %><br />
+    <%= f.text_field :cat_id %>
+  </div>
+  <div class="field">
+    <%= f.label :subject %><br />
+    <%= f.text_field :subject %>
+  </div>
+  <div class="field">
+    <%= f.label :source %><br />
+    <%= f.text_field :source %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

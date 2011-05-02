@@ -1,4 +1,10 @@
 Flattest::Application.routes.draw do
+  resources :breezes_tags
+
+  resources :tags
+
+  resources :breezes
+
   resources :users
 
   # The priority is based upon order of creation:

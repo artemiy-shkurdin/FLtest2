@@ -1,0 +1,2 @@
+module BreezesTagsHelper
+end

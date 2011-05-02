@@ -1,0 +1,36 @@
+<h1>Listing breezes</h1>
+
+<table>
+  <tr>
+    <th>|User|</th>
+    <th>|Content|</th>
+    <th>|Cathegory|</th>
+    <th>|Subject|</th>
+    <th>|Breeze source|</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @breezes.each do |breeze| %>
+  <tr>
+    <td>|<%= breeze.user_id %>|</td>
+    <td>|<%= breeze.content %>|</td>
+    <td>|<%= breeze.cat_id %>|</td>
+    <td>|<%= breeze.subject %>|</td>
+    <td>|<%= breeze.source %>|</td>
+    <td><%= link_to 'Show', breeze %></td>
+    <td><%= link_to 'Edit', edit_breeze_path(breeze) %></td>
+    <td><%= link_to 'Destroy', breeze, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+    <% breeze.tags.each do |tag| %>
+      <tr>
+        <td><%= tag.name %></td>
+      </tr>
+    <% end %>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Breeze', new_breeze_path %>

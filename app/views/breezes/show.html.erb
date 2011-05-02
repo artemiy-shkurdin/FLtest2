@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @breeze.user_id %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @breeze.content %>
+</p>
+
+<p>
+  <b>Cat:</b>
+  <%= @breeze.cat_id %>
+</p>
+
+<p>
+  <b>Subject:</b>
+  <%= @breeze.subject %>
+</p>
+
+<p>
+  <b>Breeze source:</b>
+  <%= @breeze.breeze_source %>
+</p>
+
+
+<%= link_to 'Edit', edit_breeze_path(@breeze) %> |
+<%= link_to 'Back', breezes_path %>
