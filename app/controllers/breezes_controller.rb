@@ -1,6 +1,5 @@
 class BreezesController < ApplicationController
-  # GET /breezes
-  # GET /breezes.xml
+
   def index
     @breezes = Breeze.all
 
@@ -10,8 +9,6 @@ class BreezesController < ApplicationController
     end
   end
 
-  # GET /breezes/1
-  # GET /breezes/1.xml
   def show
     @breeze = Breeze.find(params[:id])
 
@@ -21,8 +18,7 @@ class BreezesController < ApplicationController
     end
   end
 
-  # GET /breezes/new
-  # GET /breezes/new.xml
+
   def new
     @breeze = Breeze.new
 
@@ -32,13 +28,10 @@ class BreezesController < ApplicationController
     end
   end
 
-  # GET /breezes/1/edit
   def edit
     @breeze = Breeze.find(params[:id])
   end
 
-  # POST /breezes
-  # POST /breezes.xml
   def create
     @breeze = Breeze.new(params[:breeze])
 
@@ -53,8 +46,6 @@ class BreezesController < ApplicationController
     end
   end
 
-  # PUT /breezes/1
-  # PUT /breezes/1.xml
   def update
     @breeze = Breeze.find(params[:id])
 
@@ -69,8 +60,6 @@ class BreezesController < ApplicationController
     end
   end
 
-  # DELETE /breezes/1
-  # DELETE /breezes/1.xml
   def destroy
     @breeze = Breeze.find(params[:id])
     @breeze.destroy

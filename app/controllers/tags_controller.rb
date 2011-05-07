@@ -1,6 +1,5 @@
 class TagsController < ApplicationController
-  # GET /tags
-  # GET /tags.xml
+
   def index
     @tags = Tag.all
 
@@ -10,8 +9,6 @@ class TagsController < ApplicationController
     end
   end
 
-  # GET /tags/1
-  # GET /tags/1.xml
   def show
     @tag = Tag.find(params[:id])
 
@@ -21,8 +18,6 @@ class TagsController < ApplicationController
     end
   end
 
-  # GET /tags/new
-  # GET /tags/new.xml
   def new
     @tag = Tag.new
 
@@ -32,13 +27,10 @@ class TagsController < ApplicationController
     end
   end
 
-  # GET /tags/1/edit
   def edit
     @tag = Tag.find(params[:id])
   end
 
-  # POST /tags
-  # POST /tags.xml
   def create
     @tag = Tag.new(params[:tag])
 
@@ -53,8 +45,6 @@ class TagsController < ApplicationController
     end
   end
 
-  # PUT /tags/1
-  # PUT /tags/1.xml
   def update
     @tag = Tag.find(params[:id])
 
@@ -69,8 +59,6 @@ class TagsController < ApplicationController
     end
   end
 
-  # DELETE /tags/1
-  # DELETE /tags/1.xml
   def destroy
     @tag = Tag.find(params[:id])
     @tag.destroy
