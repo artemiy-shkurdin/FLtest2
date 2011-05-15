@@ -1,13 +1,26 @@
 Flattest::Application.routes.draw do
-  resources :categories
+  get "home/index"
 
-  resources :breezes_tags
+  get "user_sessions/new"
+
+
+
+  resources :categories
 
   resources :tags
 
   resources :breezes
 
   resources :users
+
+  root :to => "home#index"
+
+  resources :home
+
+  resources :user_sessions
+
+  match "login" => 'user_sessions#new', :as => :login
+  match "logout" => 'user_sessions#destroy', :as => :logout
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
