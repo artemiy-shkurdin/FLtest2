@@ -1,4 +1,6 @@
 Flattest::Application.routes.draw do
+  resources :categories
+
   resources :breezes_tags
 
   resources :tags
