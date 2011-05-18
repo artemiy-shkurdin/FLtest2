@@ -19,6 +19,10 @@ public
       end
     end
 
+    def anonymous
+      @user_session = UserSession.new
+    end
+
     def destroy
       current_user_session.destroy
       flash[:notice] = "Logout successful!"

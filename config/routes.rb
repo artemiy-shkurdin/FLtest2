@@ -19,6 +19,8 @@ Flattest::Application.routes.draw do
 
   resources :user_sessions
 
+  match "home" => 'home#index', :as => :home
+  match "my_index" => 'breezes#my_index', :as =>:my_index
   match "login" => 'user_sessions#new', :as => :login
   match "logout" => 'user_sessions#destroy', :as => :logout
 

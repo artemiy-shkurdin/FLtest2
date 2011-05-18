@@ -9,6 +9,15 @@ class BreezesController < ApplicationController
     end
   end
 
+  def my_index
+    @breezes = Breeze.where(:user_id => current_user.id)
+
+    respond_to do |format|
+      format.html # my_index.html.erb
+      format.xml  { render :xml => @breezes }
+    end
+  end
+
   def show
     @breeze = Breeze.find(params[:id])
 
@@ -18,9 +27,9 @@ class BreezesController < ApplicationController
     end
   end
 
-
   def new
     @breeze = Breeze.new
+
 
     respond_to do |format|
       format.html # new.html.erb

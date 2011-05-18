@@ -1,4 +1,4 @@
-<h1>Listing all breezes</h1>
+<h1>Listing my breezes</h1>
 
 <table>
   <tr>
@@ -14,22 +14,24 @@
 
 <% @breezes.each do |breeze| %>
   <tr>
-    <td>|<%= breeze.user_id %></td>
+    <td>|<%= breeze.user_id %>|</td>
     <td>|<%= breeze.content %>|</td>
     <td>|<%= breeze.cat_id %>|</td>
     <td>|<%= breeze.subject %>|</td>
     <td>|<%= breeze.source %>|</td>
     <td><%= link_to 'Show', breeze %></td>
-    <% if current_user then if current_user.id = breeze.user_id && breeze.user_id > 0 then%>
-      <td><%= link_to 'Edit', edit_breeze_path(breeze)%></td>
-      <td><%= link_to 'Destroy', breeze, :confirm => 'Are you sure?', :method => :delete %></td>
-      <%end%>
-    <%end%>
-  <%end%>
+    <td><%= link_to 'Edit', edit_breeze_path(breeze) %></td>
+    <td><%= link_to 'Destroy', breeze, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
+    <% breeze.tags.each do |tag| %>
+      <tr>
+        <td><%= tag.name %></td>
+      </tr>
+    <% end %>
+<% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Breeze', new_breeze_path %> <br />
+<%= link_to 'New Breeze', new_breeze_path %>  <br/>
 <%= link_to 'Go Home', home_path %>

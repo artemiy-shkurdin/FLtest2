@@ -2,12 +2,13 @@
 
 <p>
   <b>User:</b>
+
   <%= @breeze.user_id %>
 </p>
 
 <p>
-  <b>Content:</b>
-  <%= @breeze.content %>
+  <b>Content:</b><br/>
+  <%= text_area(:breeze, :content, :size => '80x10' , :disabled => 'disabled') %>
 </p>
 
 <p>
@@ -26,5 +27,4 @@
 </p>
 
 
-<%= link_to 'Edit', edit_breeze_path(@breeze) %> |
-<%= link_to 'Back', breezes_path %>
+<%= link_to 'Back', home_path %>
